@@ -8,15 +8,19 @@
 
 import UIKit
 import CoreData
-
+import Parse
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var carwashes : [CarWash]? //** Array of students
+    var carwashexist : Bool?
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+         Parse.enableLocalDatastore()
+        Parse.setApplicationId("Q1j3jYQ6IJk4cqFns4f9mfpNUQqSgimF7zv43Kdv",
+            clientKey: "w6Y5QnjoWlQzs7yyWYH4w0Hulec4yTRurwE9RWWR")
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         return true
     }
 
